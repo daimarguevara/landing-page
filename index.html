@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHUPITI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #e4e4e4; 
+            color: #333; 
+        }
+        header { 
+            background-color: #4f288d; 
+            color: white; 
+            text-align: center; 
+            padding: 50px 20px; 
+        }
+        section { 
+            padding: 40px 20px; 
+            max-width: 800px; 
+            margin: auto; 
+            text-align: center; 
+            color: cornflowerblue;
+        }
+        h1, h2 { 
+            text-align: center; 
+        }
+        footer { 
+            background: #333; 
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+        }
+        .productos { 
+            display: flex; 
+            justify-content: space-around; 
+            flex-wrap: wrap; 
+        }
+        .producto { 
+            background: white; 
+            padding: 20px; 
+            margin: 10px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+            width: 200px; 
+            text-align: center;
+        }
+        /* .producto img { height: 150px; object-fit: cover; } */
+        form 
+        { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    max-width: 400px; 
+    margin: auto; 
+}
+input, select { 
+    width: 100%; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+#mensaje { 
+    margin-top: 10px; 
+    text-align: center; 
+    font-weight: bold; 
+}
+button { 
+    background: #ffffff; 
+    color: #4f288d;
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-top: 20px; 
+}
+button:hover { 
+    background: #e4e4e4; 
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CHUPITI</h1>
+        <h2>Decoraciones y Renta para Fiestas Mierderas</h2>
+        <p>¡Haz tu fiesta inolvidable! Rentamos mesas, sillas, manteles y más... todo a bajo PRECIO</p>
+        <p>Stock limitado: 30 por item por día.</p>
+        <button onclick="document.getElementById('reservas').scrollIntoView({behavior: 'smooth'});">Reservar Ahora</button>
+    </header>
+
+    <section id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="productos">
+            <div class="producto">
+                <h3>Mesas</h3>
+                <p>Mesas redondas o rectangulares para hasta 10 personas.</p>
+                <img src="https://images.unsplash.com/photo-1681747941388-87146b535108?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%; height: auto;" alt="Mesa">
+            </div>
+            <div class="producto">
+                <h3>Sillas</h3>
+                <p>Sillas cómodas y resistentes.</p>
+                <img src="https://images.unsplash.com/photo-1735547928473-c099d7ef0628?q=80&w=405&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%; height: auto;" alt="Silla">
+            </div>
+            <div class="producto">
+                <h3>Manteles</h3>
+                <p>Manteles elegantes en varios colores.</p>
+                <img src="https://images.unsplash.com/photo-1724855946374-a028e00e4a16?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 100%; height: auto;" alt="Mantel">
+            </div>
+        </div>
+    </section>
+
+    <section id="reservas">
+        <h2>Sistema de Reservas</h2>
+        <form id="form-reserva">
+    <label for="item">Elementos:</label>
+    <select id="item" required>
+        <option value="">Selecciona</option>
+        <option value="mesas">Mesas</option>
+        <option value="sillas">Sillas</option>
+        <option value="manteles">Manteles</option>
+    </select>
+
+    <label for="fecha">Confírmame la fecha</label>
+    <input type="date" id="fecha" required="">
+
+    <label for="cantidad">Dime que cantidad de pobres invitarás:</label>
+    <input type="number" id="cantidad" min="1" max="30" required>
+
+    <label for="nombre">Escribe tu puto nombre:</label>
+    <input type="text" id="nombre" required>
+
+    <label for="email">dejame tu dirección de email</label>
+    <input type="email" id="email" required>
+
+    <button type="submit">Reservar</button>
+</form>
+<div id="mensaje"></div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Email: info@fiestas.com | Tel: +123456789</p>
+        <<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.0395302614456!2d-56.184278825194745!3d-34.90545747349468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f81ca7c7ce75b%3A0xabd861c65da39087!2sLives%20Tacuarembo%2C%20Tacuaremb%C3%B3%201388%2C%2011200%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses!2suy!4v1766012221323!5m2!1ses!2suy" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Decoraciones y Renta para Fiestas. Todos los derechos reservados.</p>
+<a href="https://facebook.com" style="color: white; margin: 0 10px;">Facebook</a>
+<a href="https://instagram.com" style="color: white; margin: 0 10px;">Instagram</a>
+    </footer>
+     <script>
+    const today = new Date().toISOString().split('T')[0]; // Formato YYYY-MM-DD
+    document.getElementById('fecha').setAttribute('min', today);
+</script>
+<script>
+    // ... (código de fecha min)
+
+    // Simulación de reservas (objeto: { 'item:fecha': totalReservado })
+    let reservasSimuladas = {}; // O usa localStorage para persistir: let reservasSimuladas = JSON.parse(localStorage.getItem('reservas')) || {};
+
+    // Manejar formulario
+    document.getElementById('form-reserva').addEventListener('submit', (e) => {
+        e.preventDefault(); // Evita recarga
+        const item = document.getElementById('item').value;
+        const fecha = document.getElementById('fecha').value;
+        const cantidad = parseInt(document.getElementById('cantidad').value);
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const mensaje = document.getElementById('mensaje');
+
+        if (!item || !fecha || !cantidad || cantidad > 30) {
+            mensaje.textContent = 'Por favor, completa todos los campos correctamente.';
+            mensaje.style.color = 'red';
+            return;
+        }
+
+        // aqui estará la clave única: item + ':' + fecha
+        const clave = item + ':' + fecha;
+        const totalReservado = reservasSimuladas[clave] || 0;
+
+        if (totalReservado + cantidad > 30) {
+            mensaje.textContent = `Lo siento, solo quedan ${30 - totalReservado} unidades disponibles para ${item} en esa fecha.`;
+            mensaje.style.color = 'red';
+            return;
+        }
+
+        // "Guardar" como reserva simulada.
+        reservasSimuladas[clave] = totalReservado + cantidad;
+
+        mensaje.textContent = '¡Reserva exitosa! Te contactaremos pronto.';
+        mensaje.style.color = 'green';
+        document.getElementById('form-reserva').reset();
+    });
+</script>
+</body>
+</html>
